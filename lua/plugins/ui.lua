@@ -4,7 +4,7 @@ return {
     opts = {
       window = {
         width = function()
-          return math.floor(vim.o.columns * 0.3) -- 30% of current screen width
+          return math.floor(vim.o.columns * 0.25) -- 25% of current screen width
         end,
       },
     },

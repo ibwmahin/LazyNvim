@@ -1,12 +1,36 @@
 return {
+  -- {
+  --   "craftzdog/solarized-osaka.nvim",
+  --   lazy = false,
+  --   priority = 1000,
+  --   opts = {
+  --     transparent = false,
+  --   },
+  --   config = function(_, opts)
+  --     require("solarized-osaka").setup(opts)
+  --     vim.g.lazyvim_theme = "solarized-osaka" -- default theme
+  --     vim.cmd.colorscheme(vim.g.lazyvim_theme)
+  --   end,
+  -- },
+
+  -- 🌸 Catppuccin theme
   {
-    "craftzdog/solarized-osaka.nvim",
+    "catppuccin/nvim",
+    name = "catppuccin",
     lazy = false,
     priority = 1000,
-    opts = function()
-      return {
-        transparent = false,
-      }
-    end,
+    opts = {
+      flavour = "mocha", -- latte, frappe, macchiato, mocha
+      transparent_background = false,
+      integrations = {
+        treesitter = true,
+        native_lsp = { enabled = true },
+        cmp = true,
+        gitsigns = true,
+        nvimtree = true,
+        telescope = true,
+        which_key = true,
+      },
+    },
   },
 }
