@@ -14,23 +14,36 @@ return {
   -- },
 
   -- 🌸 Catppuccin theme
+  -- {
+  --   "catppuccin/nvim",
+  --   name = "catppuccin",
+  --   lazy = false,
+  --   priority = 1000,
+  --   opts = {
+  --     flavour = "mocha", -- latte, frappe, macchiato, mocha
+  --     transparent_background = false,
+  --     integrations = {
+  --       treesitter = true,
+  --       native_lsp = { enabled = true },
+  --       cmp = true,
+  --       gitsigns = true,
+  --       nvimtree = true,
+  --       telescope = true,
+  --       which_key = true,
+  --     },
+  --   },
+  -- },
+
+  -- tokyonight
+
   {
-    "catppuccin/nvim",
-    name = "catppuccin",
+    "folke/tokyonight.nvim",
+    name = "tokyonight",
     lazy = false,
     priority = 1000,
     opts = {
-      flavour = "mocha", -- latte, frappe, macchiato, mocha
-      transparent_background = false,
-      integrations = {
-        treesitter = true,
-        native_lsp = { enabled = true },
-        cmp = true,
-        gitsigns = true,
-        nvimtree = true,
-        telescope = true,
-        which_key = true,
-      },
+      style = "night", -- "storm", "night", "moon", "day"
+      transparent = false,
     },
   },
 }
