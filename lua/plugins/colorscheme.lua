@@ -12,7 +12,7 @@ return {
   --     vim.cmd.colorscheme(vim.g.lazyvim_theme)
   --   end,
   -- },
-
+  --
   -- 🌸 Catppuccin theme
   -- {
   --   "catppuccin/nvim",
