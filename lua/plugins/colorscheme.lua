@@ -4,7 +4,7 @@ return {
   --   lazy = false,
   --   priority = 1000,
   --   opts = {
-  --     transparent = false,
+  --     transparent = true,
   --   },
   --   config = function(_, opts)
   --     require("solarized-osaka").setup(opts)
@@ -12,7 +12,26 @@ return {
   --     vim.cmd.colorscheme(vim.g.lazyvim_theme)
   --   end,
   -- },
+
+  -- {
+  --   "projekt0n/github-nvim-theme",
+  --   name = "github-theme",
+  --   lazy = false, -- make sure we load this during startup if it is your main colorscheme
+  --   priority = 1000, -- make sure to load this before all the other start plugins
+  --   config = function()
+  --     require("github-theme").setup({
+  --       -- ...
+  --     })
   --
+  --     -- vim.cmd("colorscheme github_dark")
+  --     vim.cmd("colorscheme github_dark_default")
+  --     -- vim.cmd("colorscheme github_dark_dimmed")
+  --     -- vim.cmd("colorscheme github_dark_high_contrast")
+  --     -- vim.cmd("colorscheme github_dark_colorblind")
+  --     -- vim.cmd("colorscheme github_dark_tritanopia")
+  --   end,
+  -- },
+
   -- 🌸 Catppuccin theme
   -- {
   --   "catppuccin/nvim",
@@ -36,14 +55,65 @@ return {
 
   -- tokyonight
 
+  -- {
+  --   "folke/tokyonight.nvim",
+  --   name = "tokyonight",
+  --   lazy = false,
+  --   priority = 1000,
+  --   opts = {
+  --     style = "night", -- "storm", "night", "moon", "day"
+  --     transparent = false,
+  --   },
+  -- },
+
+  -- {
+  --   "nyoom-engineering/oxocarbon.nvim",
+  --   config = function()
+  --     vim.cmd.colorscheme(vim.g.lazyvim_theme or "oxocarbon")
+  --   end,
+  -- },
+
+  -- Example using lazy.nvim
+
   {
-    "folke/tokyonight.nvim",
-    name = "tokyonight",
+    "rebelot/kanagawa.nvim",
     lazy = false,
     priority = 1000,
-    opts = {
-      style = "night", -- "storm", "night", "moon", "day"
-      transparent = false,
-    },
+    config = function()
+      require("kanagawa").setup({
+        transparent = true, -- your wallpaper will show through
+        compile = true,
+        undercurl = true,
+        commentStyle = { italic = true },
+        terminalColors = true,
+
+        colors = {
+          theme = {
+            wave = {},
+            lotus = {},
+            dragon = {},
+            all = {},
+          },
+        },
+      })
+
+      -- Pick the variant that fits your wallpaper best
+      vim.cmd("colorscheme kanagawa-wave") -- 🌊 good for the deep blue tones
+      -- vim.cmd("colorscheme kanagawa-dragon") -- 🐉 warmer, more contrasty
+      -- vim.cmd("colorscheme kanagawa-lotus") -- 🌸 brighter, softer
+    end,
   },
+
+  -- Using Lazy
+  -- {
+  --   "navarasu/onedark.nvim",
+  --   priority = 1000, -- make sure to load this before all the other start plugins
+  --   config = function()
+  --     require("onedark").setup({
+  --       style = "deep", -- theme vaients: dark , darker, cool, deep, warm, warmer
+  --     })
+  --     -- Enable theme
+  --     require("onedark").load()
+  --   end,
+  -- },
 }
