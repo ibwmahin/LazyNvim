@@ -69,12 +69,12 @@ return {
   --   },
   -- },
   ------------------------ OXOCARBON
-  -- {
-  --   "nyoom-engineering/oxocarbon.nvim",
-  --   config = function()
-  --     vim.cmd.colorscheme(vim.g.lazyvim_theme or "oxocarbon")
-  --   end,
-  -- },
+  {
+    "nyoom-engineering/oxocarbon.nvim",
+    config = function()
+      vim.cmd.colorscheme(vim.g.lazyvim_theme or "oxocarbon")
+    end,
+  },
 
   -- Example using lazy.nvim
 
@@ -108,18 +108,18 @@ return {
   -- },
 
   ------------------------------------------ ONE DARK THEME
-  {
-    "navarasu/onedark.nvim",
-    priority = 1000, -- make sure to load this before all the other start plugins
-    config = function()
-      require("onedark").setup({
-        style = "cool",
-        -- theme vaients: dark , darker, cool, deep, warm, warmer
-      })
-      -- Enable theme
-      require("onedark").load()
-    end,
-  },
+  -- {
+  --   "navarasu/onedark.nvim",
+  --   priority = 1000, -- make sure to load this before all the other start plugins
+  --   config = function()
+  --     require("onedark").setup({
+  --       style = "cool",
+  --       -- theme vaients: dark , darker, cool, deep, warm, warmer
+  --     })
+  --     -- Enable theme
+  --     require("onedark").load()
+  --   end,
+  -- },
   --
   --
   --

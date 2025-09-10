@@ -1,10 +1,13 @@
--- NVChad-like tree + quick mappings (append to your keymaps file)
+-- NVChad-style keymaps
 local map = vim.keymap.set
 local opts = { noremap = true, silent = true }
 
--- Toggle Neo-tree quickly (NVChad: <C-n>)
+-----------------------
+-- Neo-tree shortcuts
+-----------------------
+
+-- Toggle Neo-tree (like NVChad <C-n>)
 local function toggle_neotree()
-  -- Try Lua API first, then fallback to command
   if pcall(require, "neo-tree.command") then
     pcall(function()
       require("neo-tree.command").execute({ toggle = true })
@@ -14,8 +17,9 @@ local function toggle_neotree()
   pcall(vim.cmd, "Neotree toggle")
 end
 map("n", "<C-n>", toggle_neotree, opts)
+map("n", "<leader>e", toggle_neotree, opts) -- alternate leader shortcut
 
--- Helper: find neo-tree window (looks for 'neo-tree' filetype or buffer name)
+-- Helper to find Neo-tree window
 local function find_neo_tree_win()
   for _, w in ipairs(vim.api.nvim_list_wins()) do
     local b = vim.api.nvim_win_get_buf(w)
@@ -31,7 +35,7 @@ local function find_neo_tree_win()
   return nil
 end
 
--- Resize neo-tree (delta = positive or negative integer)
+-- Resize Neo-tree
 local function resize_neo_tree(delta)
   local w = find_neo_tree_win()
   if not w then
@@ -43,7 +47,7 @@ local function resize_neo_tree(delta)
   vim.api.nvim_win_set_width(w, new)
 end
 
--- NVChad-style Ctrl+Alt + h/j/k/l to resize sidebar
+-- Resize Neo-tree horizontally
 map("n", "<C-A-h>", function()
   resize_neo_tree(-5)
 end, opts)
@@ -57,7 +61,7 @@ map("n", "<C-M-l>", function()
   resize_neo_tree(5)
 end, opts)
 
--- Vertical adjustments (up/down)
+-- Resize Neo-tree vertically
 map("n", "<C-A-j>", function()
   local w = find_neo_tree_win()
   if not w then
@@ -98,18 +102,36 @@ map("n", "<C-M-k>", function()
   vim.api.nvim_win_set_height(w, math.max(5, curh - 3))
 end, opts)
 
--- Shortcut to toggle file explorer (same as <C-n> but with leader)
-map("n", "<leader>e", toggle_neotree, opts)
+-----------------------
+-- Window splits & navigation
+-----------------------
 
--- Make ';' open command-line like NVChad
+-- Splits
+map("n", "<leader>sv", ":vsplit<CR>", opts) -- vertical split
+map("n", "<leader>sh", ":split<CR>", opts) -- horizontal split
+
+-- Navigate between splits (Ctrl + h/j/k/l)
+map("n", "<C-h>", "<C-w>h", opts)
+map("n", "<C-j>", "<C-w>j", opts)
+map("n", "<C-k>", "<C-w>k", opts)
+map("n", "<C-l>", "<C-w>l", opts)
+
+-- Resize splits
+map("n", "<C-Up>", ":resize +2<CR>", opts)
+map("n", "<C-Down>", ":resize -2<CR>", opts)
+map("n", "<C-Left>", ":vertical resize -2<CR>", opts)
+map("n", "<C-Right>", ":vertical resize +2<CR>", opts)
+
+-----------------------
+-- Buffer navigation
+-----------------------
+
+-- Next/previous buffer
+map("n", "<Tab>", ":bnext<CR>", opts)
+map("n", "<S-Tab>", ":bprevious<CR>", opts)
+
+-----------------------
+-- Command-line shortcut
+-----------------------
 map("n", ";", ":", { noremap = true })
 map("v", ";", ":", { noremap = true })
-
--- NVChad-style buffer navigation
--- If you use bufferline.nvim, use require("bufferline").cycle instead
-map("n", "<Tab>", function()
-  vim.cmd("bnext")
-end, opts)
-map("n", "<S-Tab>", function()
-  vim.cmd("bprevious")
-end, opts)
