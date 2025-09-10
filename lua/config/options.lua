@@ -24,7 +24,6 @@ opt.clipboard = "unnamedplus"
 opt.expandtab = true
 opt.shiftwidth = 2
 opt.tabstop = 2
-
 -- Better UI for diagnostics
 vim.diagnostic.config({
   virtual_text = { spacing = 2, prefix = "●" },

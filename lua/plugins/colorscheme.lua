@@ -1,6 +1,7 @@
 return {
-  -- {
-  --   "craftzdog/solarized-osaka.nvim",
+
+  ------------------ SOLARIZED OSAKA
+  -- { "craftzdog/solarized-osaka.nvim",
   --   lazy = false,
   --   priority = 1000,
   --   opts = {
@@ -13,6 +14,7 @@ return {
   --   end,
   -- },
 
+  -------------------------GITHUB THEME
   -- {
   --   "projekt0n/github-nvim-theme",
   --   name = "github-theme",
@@ -32,6 +34,7 @@ return {
   --   end,
   -- },
 
+  ------------------------------------CATPPUCCIN THEME
   -- 🌸 Catppuccin theme
   -- {
   --   "catppuccin/nvim",
@@ -53,7 +56,7 @@ return {
   --   },
   -- },
 
-  -- tokyonight
+  -----------------------------------------------tokyonight
 
   -- {
   --   "folke/tokyonight.nvim",
@@ -65,13 +68,13 @@ return {
   --     transparent = false,
   --   },
   -- },
-
-  {
-    "nyoom-engineering/oxocarbon.nvim",
-    config = function()
-      vim.cmd.colorscheme(vim.g.lazyvim_theme or "oxocarbon")
-    end,
-  },
+  ------------------------ OXOCARBON
+  -- {
+  --   "nyoom-engineering/oxocarbon.nvim",
+  --   config = function()
+  --     vim.cmd.colorscheme(vim.g.lazyvim_theme or "oxocarbon")
+  --   end,
+  -- },
 
   -- Example using lazy.nvim
 
@@ -104,16 +107,28 @@ return {
   --   end,
   -- },
 
-  -- ONE DARK THEME
+  ------------------------------------------ ONE DARK THEME
+  {
+    "navarasu/onedark.nvim",
+    priority = 1000, -- make sure to load this before all the other start plugins
+    config = function()
+      require("onedark").setup({
+        style = "cool",
+        -- theme vaients: dark , darker, cool, deep, warm, warmer
+      })
+      -- Enable theme
+      require("onedark").load()
+    end,
+  },
+  --
+  --
+  --
+  --------------------------ROSE PINE-
   -- {
-  --   "navarasu/onedark.nvim",
-  --   priority = 1000, -- make sure to load this before all the other start plugins
+  --   "rose-pine/neovim",
+  --   name = "rose-pine",
   --   config = function()
-  --     require("onedark").setup({
-  --       style = "deep", -- theme vaients: dark , darker, cool, deep, warm, warmer
-  --     })
-  --     -- Enable theme
-  --     require("onedark").load()
+  --     vim.cmd("colorscheme rose-pine")
   --   end,
   -- },
 }
