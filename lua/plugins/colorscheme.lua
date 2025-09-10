@@ -66,45 +66,45 @@ return {
   --   },
   -- },
 
-  -- {
-  --   "nyoom-engineering/oxocarbon.nvim",
-  --   config = function()
-  --     vim.cmd.colorscheme(vim.g.lazyvim_theme or "oxocarbon")
-  --   end,
-  -- },
-
-  -- Example using lazy.nvim
-
   {
-    "rebelot/kanagawa.nvim",
-    lazy = false,
-    priority = 1000,
+    "nyoom-engineering/oxocarbon.nvim",
     config = function()
-      require("kanagawa").setup({
-        transparent = true, -- your wallpaper will show through
-        compile = true,
-        undercurl = true,
-        commentStyle = { italic = true },
-        terminalColors = true,
-
-        colors = {
-          theme = {
-            wave = {},
-            lotus = {},
-            dragon = {},
-            all = {},
-          },
-        },
-      })
-
-      -- Pick the variant that fits your wallpaper best
-      vim.cmd("colorscheme kanagawa-wave") -- 🌊 good for the deep blue tones
-      -- vim.cmd("colorscheme kanagawa-dragon") -- 🐉 warmer, more contrasty
-      -- vim.cmd("colorscheme kanagawa-lotus") -- 🌸 brighter, softer
+      vim.cmd.colorscheme(vim.g.lazyvim_theme or "oxocarbon")
     end,
   },
 
-  -- Using Lazy
+  -- Example using lazy.nvim
+
+  -- {
+  --   "rebelot/kanagawa.nvim",
+  --   lazy = false,
+  --   priority = 1000,
+  --   config = function()
+  --     require("kanagawa").setup({
+  --       -- transparent = false, -- your wallpaper will show through
+  --       -- compile = true,
+  --       -- undercurl = true,
+  --       -- commentStyle = { italic = true },
+  --       -- terminalColors = true,
+  --
+  --       -- colors = {
+  --       --   theme = {
+  --       --     wave = {},
+  --       --     lotus = {},
+  --       --     dragon = {},
+  --       --     all = {},
+  --       --   },
+  --       -- },
+  --     })
+  --
+  --     -- Pick the variant that fits your wallpaper best
+  --     -- vim.cmd("colorscheme kanagawa-wave") -- 🌊 good for the deep blue tones
+  --     vim.cmd("colorscheme kanagawa-dragon") -- 🐉 warmer, more contrasty
+  --     -- vim.cmd("colorscheme kanagawa-lotus") -- 🌸 brighter, softer
+  --   end,
+  -- },
+
+  -- ONE DARK THEME
   -- {
   --   "navarasu/onedark.nvim",
   --   priority = 1000, -- make sure to load this before all the other start plugins

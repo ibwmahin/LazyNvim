@@ -43,9 +43,7 @@ local function resize_neo_tree(delta)
   vim.api.nvim_win_set_width(w, new)
 end
 
--- NVChad-style Ctrl+Alt + h/j/k/l to resize sidebar.
--- Different terminals encode Alt as <A-...> or <M-...>, so we register both variants.
--- Horizontal adjustments (left/right)
+-- NVChad-style Ctrl+Alt + h/j/k/l to resize sidebar
 map("n", "<C-A-h>", function()
   resize_neo_tree(-5)
 end, opts)
@@ -59,8 +57,7 @@ map("n", "<C-M-l>", function()
   resize_neo_tree(5)
 end, opts)
 
--- Vertical adjustments (up/down) - only meaningful if neo-tree is floating or vertical split,
--- we'll just call win_set_height if possible (some setups won't change height for vertical)
+-- Vertical adjustments (up/down)
 map("n", "<C-A-j>", function()
   local w = find_neo_tree_win()
   if not w then
@@ -70,6 +67,7 @@ map("n", "<C-A-j>", function()
   local curh = vim.api.nvim_win_get_height(w)
   vim.api.nvim_win_set_height(w, math.max(5, curh + 3))
 end, opts)
+
 map("n", "<C-A-k>", function()
   local w = find_neo_tree_win()
   if not w then
@@ -79,6 +77,7 @@ map("n", "<C-A-k>", function()
   local curh = vim.api.nvim_win_get_height(w)
   vim.api.nvim_win_set_height(w, math.max(5, curh - 3))
 end, opts)
+
 map("n", "<C-M-j>", function()
   local w = find_neo_tree_win()
   if not w then
@@ -88,6 +87,7 @@ map("n", "<C-M-j>", function()
   local curh = vim.api.nvim_win_get_height(w)
   vim.api.nvim_win_set_height(w, math.max(5, curh + 3))
 end, opts)
+
 map("n", "<C-M-k>", function()
   local w = find_neo_tree_win()
   if not w then
@@ -101,10 +101,15 @@ end, opts)
 -- Shortcut to toggle file explorer (same as <C-n> but with leader)
 map("n", "<leader>e", toggle_neotree, opts)
 
--- Make ';' open command-line like NVChad (so you don't need shift+;)
--- NOTE: this overrides default ';' behavior (repeat f/t motions). If you rely on ';', skip this.
+-- Make ';' open command-line like NVChad
 map("n", ";", ":", { noremap = true })
 map("v", ";", ":", { noremap = true })
 
--- If you prefer semicolon to remain and want ';;' to open command-line:
--- map("n", ";;", ":", { noremap = true })
+-- NVChad-style buffer navigation
+-- If you use bufferline.nvim, use require("bufferline").cycle instead
+map("n", "<Tab>", function()
+  vim.cmd("bnext")
+end, opts)
+map("n", "<S-Tab>", function()
+  vim.cmd("bprevious")
+end, opts)
