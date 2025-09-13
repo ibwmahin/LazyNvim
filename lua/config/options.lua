@@ -4,6 +4,7 @@
 -- lua/config/options.lua
 local opt = vim.opt
 
+vim.o.guifont = "IBM Plex Mono Nerd Font:h12"
 opt.winbar = "%=%m %f"
 opt.relativenumber = true
 opt.number = true

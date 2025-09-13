@@ -1,22 +1,33 @@
 return {
   {
-    "nvim-neo-tree/neo-tree.nvim",
-    opts = function(_, opts)
-      -- merge with LazyVim defaults instead of overwriting
-      opts.window = opts.window or {}
-      opts.window.width = 30 -- or function() return math.floor(vim.o.columns * 0.2) end
-      return opts
-    end,
+    "folke/zen-mode.nvim",
+    cmd = "ZenMode",
+    opts = {
+      plugins = {
+        gitsigns = true,
+        tmux = true,
+        kitty = { enabled = false, font = "+2" },
+      },
+    },
+    keys = { { "<leader>z", "<cmd>ZenMode<cr>", desc = "Zen Mode" } },
+  },
+
+  {
+    "folke/snacks.nvim",
+    opts = {
+      dashboard = {
+        preset = {
+          header = [[
+██╗      ██████╗  ██████╗ ███╗   ███╗ ██████╗ ██████╗ ██████╗ ███████╗
+██║     ██╔═══██╗██╔═══██╗████╗ ████║██╔════╝██╔═══██╗██╔══██╗██╔════╝
+██║     ██║   ██║██║   ██║██╔████╔██║██║     ██║   ██║██║  ██║█████╗  
+██║     ██║   ██║██║   ██║██║╚██╔╝██║██║     ██║   ██║██║  ██║██╔══╝  
+███████╗╚██████╔╝╚██████╔╝██║ ╚═╝ ██║╚██████╗╚██████╔╝██████╔╝███████╗
+╚══════╝ ╚═════╝  ╚═════╝ ╚═╝     ╚═╝ ╚═════╝ ╚═════╝ ╚═════╝ ╚══════╝
+----------------------------------------------------------------------
+                                              Weaving Code, Craft Feel]],
+        },
+      },
+    },
   },
 }
---
--- return {
---   {
---     "nvim-neo-tree/neo-tree.nvim",
---     opts = {
---       window = {
---         width = 28, -- default is 40, shrink to 28
---       },
---     },
---   },
--- }

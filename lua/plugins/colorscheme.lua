@@ -1,7 +1,8 @@
 return {
 
   ------------------ SOLARIZED OSAKA
-  -- { "craftzdog/solarized-osaka.nvim",
+  -- {
+  --   "craftzdog/solarized-osaka.nvim",
   --   lazy = false,
   --   priority = 1000,
   --   opts = {
@@ -14,6 +15,15 @@ return {
   --   end,
   -- },
 
+  --vesper dark theme
+  {
+    "datsfilipe/vesper.nvim",
+    lazy = false, -- Load immediately or on demand
+    priority = 1000, -- Higher priority for colorscheme loading
+    config = function()
+      vim.cmd("colorscheme vesper")
+    end,
+  },
   -------------------------GITHUB THEME
   -- {
   --   "projekt0n/github-nvim-theme",
@@ -22,13 +32,13 @@ return {
   --   priority = 1000, -- make sure to load this before all the other start plugins
   --   config = function()
   --     require("github-theme").setup({
-  --       -- ...
+  --       --  ...
   --     })
   --
   --     -- vim.cmd("colorscheme github_dark")
-  --     vim.cmd("colorscheme github_dark_default")
+  --     -- vim.cmd("colorscheme github_dark_default")
   --     -- vim.cmd("colorscheme github_dark_dimmed")
-  --     -- vim.cmd("colorscheme github_dark_high_contrast")
+  --     vim.cmd("colorscheme github_dark_high_contrast")
   --     -- vim.cmd("colorscheme github_dark_colorblind")
   --     -- vim.cmd("colorscheme github_dark_tritanopia")
   --   end,
@@ -68,16 +78,16 @@ return {
   --     transparent = false,
   --   },
   -- },
+
   ------------------------ OXOCARBON
-  {
-    "nyoom-engineering/oxocarbon.nvim",
-    config = function()
-      vim.cmd.colorscheme(vim.g.lazyvim_theme or "oxocarbon")
-    end,
-  },
+  -- {
+  --   "nyoom-engineering/oxocarbon.nvim",
+  --   config = function()
+  --     vim.cmd.colorscheme(vim.g.lazyvim_theme or "oxocarbon")
+  --   end,
+  -- },
 
   -- Example using lazy.nvim
-
   -- {
   --   "rebelot/kanagawa.nvim",
   --   lazy = false,
@@ -89,7 +99,7 @@ return {
   --       -- undercurl = true,
   --       -- commentStyle = { italic = true },
   --       -- terminalColors = true,
-  --
+  --       --
   --       -- colors = {
   --       --   theme = {
   --       --     wave = {},
@@ -101,8 +111,8 @@ return {
   --     })
   --
   --     -- Pick the variant that fits your wallpaper best
-  --     -- vim.cmd("colorscheme kanagawa-wave") -- 🌊 good for the deep blue tones
-  --     vim.cmd("colorscheme kanagawa-dragon") -- 🐉 warmer, more contrasty
+  --     vim.cmd("colorscheme kanagawa-wave") -- 🌊 good for the deep blue tones
+  --     -- vim.cmd("colorscheme kanagawa-dragon") -- 🐉 warmer, more contrasty
   --     -- vim.cmd("colorscheme kanagawa-lotus") -- 🌸 brighter, softer
   --   end,
   -- },
@@ -123,12 +133,4 @@ return {
   --
   --
   --
-  --------------------------ROSE PINE-
-  -- {
-  --   "rose-pine/neovim",
-  --   name = "rose-pine",
-  --   config = function()
-  --     vim.cmd("colorscheme rose-pine")
-  --   end,
-  -- },
 }
