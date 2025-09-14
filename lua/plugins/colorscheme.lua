@@ -6,7 +6,7 @@ return {
     lazy = false,
     priority = 1000,
     opts = {
-      transparent = false,
+      transparent = true,
     },
     config = function(_, opts)
       require("solarized-osaka").setup(opts)
@@ -15,7 +15,21 @@ return {
     end,
   },
 
-  --vesper dark theme
+  ------------------AYU
+  -- {
+  --   "Shatur/neovim-ayu",
+  --   lazy = false, -- Load immediately
+  --   priority = 1000, -- Load before other plugins
+  --
+  --   config = function()
+  --     require("ayu").setup({
+  --       mirage = false, -- Set to true for Ayu Mirage variant
+  --     })
+  --     vim.cmd("colorscheme ayu-dark") -- Options: ayu-dark, ayu-mirage, ayu-light
+  --   end,
+  -- },
+
+  --------------------- Vesper dark theme
   -- {
   --   "datsfilipe/vesper.nvim",
   --   lazy = false, -- Load immediately or on demand
@@ -44,81 +58,4 @@ return {
   --     -- vim.cmd("colorscheme github_dark_tritanopia")
   --   end,
   -- },
-
-  ------------------------------------CATPPUCCIN THEME
-  -- 🌸 Catppuccin theme
-  -- {
-  --   "catppuccin/nvim",
-  --   name = "catppuccin",
-  --   lazy = false,
-  --   priority = 1000,
-  --   opts = {
-  --     flavour = "mocha", -- latte, frappe, macchiato, mocha
-  --     transparent_background = false,
-  --     integrations = {
-  --       treesitter = true,
-  --       native_lsp = { enabled = true },
-  --       cmp = true,
-  --       gitsigns = true,
-  --       nvimtree = true,
-  --       telescope = true,
-  --       which_key = true,
-  --     },
-  --   },
-  -- },
-
-  -----------------------------------------------tokyonight
-
-  -- {
-  --   "folke/tokyonight.nvim",
-  --   name = "tokyonight",
-  --   lazy = false,
-  --   priority = 1000,
-  --   opts = {
-  --     style = "night", -- "storm", "night", "moon", "day"
-  --     transparent = false,
-  --   },
-  -- },
-
-  ------------------------ OXOCARBON
-  -- {
-  --   "nyoom-engineering/oxocarbon.nvim",
-  --   config = function()
-  --     vim.cmd.colorscheme(vim.g.lazyvim_theme or "oxocarbon")
-  --   end,
-  -- },
-
-  -- Example using lazy.nvim
-  -- {
-  --   "rebelot/kanagawa.nvim",
-  --   lazy = false,
-  --   priority = 1000,
-  --   config = function()
-  --     require("kanagawa").setup({
-  --       -- transparent = false, -- your wallpaper will show through
-  --       -- compile = true,
-  --       -- undercurl = true,
-  --       -- commentStyle = { italic = true },
-  --       -- terminalColors = true,
-  --       --
-  --       -- colors = {
-  --       --   theme = {
-  --       --     wave = {},
-  --       --     lotus = {},
-  --       --     dragon = {},
-  --       --     all = {},
-  --       --   },
-  --       -- },
-  --     })
-  --
-  --     -- Pick the variant that fits your wallpaper best
-  --     vim.cmd("colorscheme kanagawa-wave") -- 🌊 good for the deep blue tones
-  --     -- vim.cmd("colorscheme kanagawa-dragon") -- 🐉 warmer, more contrasty
-  --     -- vim.cmd("colorscheme kanagawa-lotus") -- 🌸 brighter, softer
-  --   end,
-  -- },
-
-  --
-  --
-  --
 }
