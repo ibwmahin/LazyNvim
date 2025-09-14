@@ -29,16 +29,6 @@ return {
   --   end,
   -- },
 
-  --------------------- Vesper dark theme
-  -- {
-  --   "datsfilipe/vesper.nvim",
-  --   lazy = false, -- Load immediately or on demand
-  --   priority = 1000, -- Higher priority for colorscheme loading
-  --   config = function()
-  --     vim.cmd("colorscheme vesper")
-  --   end,
-  -- },
-
   -------------------------GITHUB THEME
   -- {
   --   "projekt0n/github-nvim-theme",
