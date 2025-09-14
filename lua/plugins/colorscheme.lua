@@ -1,29 +1,29 @@
 return {
 
   ------------------ SOLARIZED OSAKA
-  -- {
-  --   "craftzdog/solarized-osaka.nvim",
-  --   lazy = false,
-  --   priority = 1000,
-  --   opts = {
-  --     transparent = true,
-  --   },
-  --   config = function(_, opts)
-  --     require("solarized-osaka").setup(opts)
-  --     vim.g.lazyvim_theme = "solarized-osaka" -- default theme
-  --     vim.cmd.colorscheme(vim.g.lazyvim_theme)
-  --   end,
-  -- },
-
-  --vesper dark theme
   {
-    "datsfilipe/vesper.nvim",
-    lazy = false, -- Load immediately or on demand
-    priority = 1000, -- Higher priority for colorscheme loading
-    config = function()
-      vim.cmd("colorscheme vesper")
+    "craftzdog/solarized-osaka.nvim",
+    lazy = false,
+    priority = 1000,
+    opts = {
+      transparent = false,
+    },
+    config = function(_, opts)
+      require("solarized-osaka").setup(opts)
+      vim.g.lazyvim_theme = "solarized-osaka" -- default theme
+      vim.cmd.colorscheme(vim.g.lazyvim_theme)
     end,
   },
+
+  --vesper dark theme
+  -- {
+  --   "datsfilipe/vesper.nvim",
+  --   lazy = false, -- Load immediately or on demand
+  --   priority = 1000, -- Higher priority for colorscheme loading
+  --   config = function()
+  --     vim.cmd("colorscheme vesper")
+  --   end,
+  -- },
 
   -------------------------GITHUB THEME
   -- {
@@ -37,9 +37,9 @@ return {
   --     })
   --
   --     -- vim.cmd("colorscheme github_dark")
-  --     -- vim.cmd("colorscheme github_dark_default")
+  --     vim.cmd("colorscheme github_dark_default")
   --     -- vim.cmd("colorscheme github_dark_dimmed")
-  --     vim.cmd("colorscheme github_dark_high_contrast")
+  --     -- vim.cmd("colorscheme github_dark_high_contrast")
   --     -- vim.cmd("colorscheme github_dark_colorblind")
   --     -- vim.cmd("colorscheme github_dark_tritanopia")
   --   end,
@@ -118,19 +118,6 @@ return {
   --   end,
   -- },
 
-  ------------------------------------------ ONE DARK THEME
-  -- {
-  --   "navarasu/onedark.nvim",
-  --   priority = 1000, -- make sure to load this before all the other start plugins
-  --   config = function()
-  --     require("onedark").setup({
-  --       style = "cool",
-  --       -- theme vaients: dark , darker, cool, deep, warm, warmer
-  --     })
-  --     -- Enable theme
-  --     require("onedark").load()
-  --   end,
-  -- },
   --
   --
   --
