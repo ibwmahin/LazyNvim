@@ -24,6 +24,7 @@ return {
       vim.cmd("colorscheme vesper")
     end,
   },
+
   -------------------------GITHUB THEME
   -- {
   --   "projekt0n/github-nvim-theme",
