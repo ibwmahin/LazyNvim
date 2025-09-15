@@ -15,6 +15,44 @@ return {
   --   end,
   -- },
 
+  ----------monokai pro
+
+  -- ~/.config/nvim/lua/plugins/monokai-pro.lua
+
+  {
+    "loctvl842/monokai-pro.nvim",
+    lazy = false,
+    priority = 1000,
+    config = function()
+      require("monokai-pro").setup({
+        filter = "spectrum",
+        -- options: classic | octagon | pro | machine | ristretto | spectrum
+      })
+      vim.cmd.colorscheme("monokai-pro")
+    end,
+  },
+
+  --everforest tgheme
+
+  --
+  -- {
+  --   "neanias/everforest-nvim",
+  --   lazy = false,
+  --   priority = 1000,
+  --   config = function()
+  --     require("everforest").setup({
+  --       background = "hard", -- Options: "hard", "medium", "soft"
+  --       transparent_background = false,
+  --       on_highlights = function(hl, palette)
+  --         hl.NormalFloat = { fg = palette.fg, bg = palette.none }
+  --       end,
+  --     })
+  --     vim.cmd.colorscheme("everforest")
+  --   end,
+  -- },
+  --
+  --
+  --
   ------------------AYU
   -- {
   --   "Shatur/neovim-ayu",
