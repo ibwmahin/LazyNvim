@@ -16,67 +16,52 @@ return {
   -- },
 
   -----------tookyo Dark color scheme 🌌
-  {
-    "tiagovla/tokyodark.nvim",
-    lazy = false,
-    priority = 1000, -- Load first
-    opts = {
-      transparent_background = false, -- set to false if you don't want transparency
-      gamma = 1.00, -- contrast adjustment (1.00 is default)
-      styles = {
-        comments = { italic = true },
-        keywords = { italic = true },
-        identifiers = {},
-        functions = { bold = true },
-        variables = { italic = true },
-      },
-      terminal_colors = true,
-    },
-    config = function(_, opts)
-      require("tokyodark").setup(opts)
-      vim.cmd([[colorscheme tokyodark]])
-    end,
-  },
-  -----------tookyonight color scheme 🌌
-
   -- {
-  --   "folke/tokyonight.nvim",
+  --   "tiagovla/tokyodark.nvim",
   --   lazy = false,
-  --   priority = 1000,
+  --   priority = 1000, -- Load first
   --   opts = {
-  --     style = "night", -- options: "storm", "moon", "night", "day"
-  --     transparent = false, -- << Enable transparency
-  --     terminal_colors = true,
+  --     transparent_background = false, -- set to false if you don't want transparency
+  --     gamma = 1.00, -- contrast adjustment (1.00 is default)
   --     styles = {
   --       comments = { italic = true },
   --       keywords = { italic = true },
-  --       functions = {},
-  --       variables = {},
+  --       identifiers = {},
+  --       functions = { bold = true },
+  --       variables = { italic = true },
   --     },
-  --     sidebars = { "qf", "help", "terminal", "lazy", "lspinfo", "packer", "spectre_panel", "toggleterm" },
-  --     dim_inactive = false,
+  --     terminal_colors = true,
   --   },
   --   config = function(_, opts)
-  --     require("tokyonight").setup(opts)
-  --     vim.cmd([[colorscheme tokyonight]])
+  --     require("tokyodark").setup(opts)
+  --     vim.cmd([[colorscheme tokyodark]])
   --   end,
   -- },
 
-  ----------monokai pro
+  -----------tookyonight color scheme 🌌
 
-  -- {
-  --   "loctvl842/monokai-pro.nvim",
-  --   lazy = false,
-  --   priority = 1000,
-  --   config = function()
-  --     require("monokai-pro").setup({
-  --       filter = "machine",
-  --       -- options: classic | octagon | pro | machine | ristretto | spectrum
-  --     })
-  --     vim.cmd.colorscheme("monokai-pro")
-  --   end,
-  -- },
-  --
+  {
+    "folke/tokyonight.nvim",
+    lazy = false,
+    priority = 1000,
+    opts = {
+      style = "night", -- options: "storm", "moon", "night", "day"
+      transparent = false, -- << Enable transparency
+      terminal_colors = true,
+      styles = {
+        comments = { italic = true },
+        keywords = { italic = true },
+        functions = {},
+        variables = {},
+      },
+      sidebars = { "qf", "help", "terminal", "lazy", "lspinfo", "packer", "spectre_panel", "toggleterm" },
+      dim_inactive = false,
+    },
+    config = function(_, opts)
+      require("tokyonight").setup(opts)
+      vim.cmd([[colorscheme tokyonight]])
+    end,
+  },
 
   --
   ------------------AYU
