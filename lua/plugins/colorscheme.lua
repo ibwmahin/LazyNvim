@@ -1,19 +1,19 @@
 return {
 
   ------------------ SOLARIZED OSAKA
-  {
-    "craftzdog/solarized-osaka.nvim",
-    lazy = false,
-    priority = 1000,
-    opts = {
-      transparent = true,
-    },
-    config = function(_, opts)
-      require("solarized-osaka").setup(opts)
-      vim.g.lazyvim_theme = "solarized-osaka" -- default theme
-      vim.cmd.colorscheme(vim.g.lazyvim_theme)
-    end,
-  },
+  -- {
+  --   "craftzdog/solarized-osaka.nvim",
+  --   lazy = false,
+  --   priority = 1000,
+  --   opts = {
+  --     transparent = true,
+  --   },
+  --   config = function(_, opts)
+  --     require("solarized-osaka").setup(opts)
+  --     vim.g.lazyvim_theme = "solarized-osaka" -- default theme
+  --     vim.cmd.colorscheme(vim.g.lazyvim_theme)
+  --   end,
+  -- },
 
   ------------------AYU
   -- {
