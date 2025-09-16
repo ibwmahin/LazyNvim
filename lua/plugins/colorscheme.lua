@@ -14,63 +14,21 @@ return {
   --     vim.cmd.colorscheme(vim.g.lazyvim_theme)
   --   end,
   -- },
+
   --------------------- AURA.nvim 💜
-
-  {
-    "baliestri/aura-theme",
-    lazy = false,
-    priority = 1000,
-    config = function(plugin)
-      -- Set runtime path for the plugin
-      vim.opt.rtp:append(plugin.dir .. "/packages/neovim")
-      -- Set the colorscheme based on your preference
-      vim.cmd([[colorscheme aura-dark]]) -- You can experiment with other variants like aura-dark-soft-text
-    end,
-  },
-
-  --------------------- lavender.nvim 💜
   -- {
-  --   "jthvai/lavender.nvim", -- Theme URL
-  --   lazy = false, -- Load the theme immediately
-  --   priority = 1000, -- High priority to ensure it's loaded first
-  --   opts = {
-  --     transparent = true, -- Enable transparent background
-  --     italic_comments = true, -- Make comments italic
-  --     contrast = "high", -- Set contrast for vibrant colors
-  --     style = "night", -- Set the style to "night"
-  --   },
-  --   config = function()
-  --     -- Apply the theme
-  --     vim.cmd("colorscheme lavender")
-  --   end,
-  -- },
-
-  -----------tookyo Dark color scheme 🌌
-  -- {
-  --   "tiagovla/tokyodark.nvim",
+  --   "baliestri/aura-theme",
   --   lazy = false,
-  --   priority = 1000, -- Load first
-  --   opts = {
-  --     transparent_background = false,
-  --     -- set to false if you don't want transparency
-  --     gamma = 1.00, -- contrast adjustment (1.00 is default)
-  --     styles = {
-  --       comments = { italic = true },
-  --       keywords = { italic = true },
-  --       identifiers = {},
-  --       functions = { bold = true },
-  --       variables = { italic = true },
-  --     },
-  --     terminal_colors = true,
-  --   },
-  --   config = function(_, opts)
-  --     require("tokyodark").setup(opts)
-  --     vim.cmd([[colorscheme tokyodark]])
+  --   priority = 1000,
+  --   config = function(plugin)
+  --     -- Set runtime path for the plugin
+  --     vim.opt.rtp:append(plugin.dir .. "/packages/neovim")
+  --     -- Set the colorscheme based on your preference
+  --     vim.cmd([[colorscheme aura-dark]]) -- You can experiment with other variants like aura-dark-soft-text
   --   end,
   -- },
 
   -----------tookyonight color scheme 🌌
-
   -- {
   --   "folke/tokyonight.nvim",
   --   lazy = false,
@@ -94,19 +52,25 @@ return {
   --   end,
   -- },
 
-  ------------------AYU
-  -- {
-  --   "Shatur/neovim-ayu",
-  --   lazy = false, -- Load immediately
-  --   priority = 1000, -- Load before other plugins
-  --
-  --   config = function()
-  --     require("ayu").setup({
-  --       mirage = false, -- Set to true for Ayu Mirage variant
-  --     })
-  --     vim.cmd("colorscheme ayu-dark") -- Options: ayu-dark, ayu-mirage, ayu-light
-  --   end,
-  -- },
+  ------------------- OXOCAEBON;
+  {
+    "nyoom-engineering/oxocarbon.nvim", -- Plugin URL
+    lazy = false, -- Load immediately (no lazy loading)
+    priority = 1000, -- Ensure high priority to load the theme first
+    config = function()
+      -- Apply the Oxocarbon theme
+      vim.cmd("colorscheme oxocarbon")
+
+      -- Optional: Set transparent background for various UI elements
+      vim.cmd("hi Normal guibg=NONE") -- Transparent background for Normal mode
+      vim.cmd("hi SignColumn guibg=NONE") -- Transparent background for SignColumn (gutter)
+      vim.cmd("hi VertSplit guibg=NONE") -- Transparent background for VertSplit
+      vim.cmd("hi StatusLine guibg=NONE") -- Transparent background for StatusLine
+      vim.cmd("hi TabLine guibg=NONE") -- Transparent background for TabLine
+      vim.cmd("hi TabLineFill guibg=NONE") -- Transparent background for TabLineFill
+      vim.cmd("hi FloatBorder guibg=NONE") -- Transparent background for floating windows
+    end,
+  },
 
   -------------------------GITHUB THEME
   -- {
