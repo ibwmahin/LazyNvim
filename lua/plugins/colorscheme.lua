@@ -15,13 +15,40 @@ return {
   --   end,
   -- },
 
+  --------------------- lavender.nvim 💜
+
+  -- {
+  --   url = "https://codeberg.org/jthvai/lavender.nvim", -- Theme URL
+  --   branch = "stable", -- Ensure you are using the stable version
+  --   lazy = false, -- Load the theme immediately (no lazy loading)
+  --   priority = 1000, -- High priority to ensure it's loaded first
+  --   opts = {
+  --     transparent = true, -- Enable transparent background
+  --     italic_comments = true, -- Make comments italic (optional)
+  --     contrast = "high", -- Set contrast for more vibrant colors (optional)
+  --     dim_inactive = true, -- Dim inactive windows (optional)
+  --     style = "night", -- Set the style to "night" or "day" (optional)
+  --   },
+  --   config = function()
+  --     -- Apply the theme
+  --     vim.cmd("colorscheme lavender")
+  --
+  --     -- Additional settings specific to Lavender theme
+  --     vim.g.lavender_italic_comments = true -- Enable italic comments
+  --     -- vim.g.lavender_contrast = "high" -- Optional: contrast setting
+  --     -- vim.g.lavender_dim_inactive = true -- Optional: dim inactive windows
+  --     vim.g.lavender_style = "night" -- Optional: set the style (night or day)
+  --   end,
+  -- },
+
   -----------tookyo Dark color scheme 🌌
   -- {
   --   "tiagovla/tokyodark.nvim",
   --   lazy = false,
   --   priority = 1000, -- Load first
   --   opts = {
-  --     transparent_background = false, -- set to false if you don't want transparency
+  --     transparent_background = false,
+  --     -- set to false if you don't want transparency
   --     gamma = 1.00, -- contrast adjustment (1.00 is default)
   --     styles = {
   --       comments = { italic = true },
@@ -52,7 +79,7 @@ return {
         comments = { italic = true },
         keywords = { italic = true },
         functions = {},
-        variables = {},
+        variables = { italic = true },
       },
       sidebars = { "qf", "help", "terminal", "lazy", "lspinfo", "packer", "spectre_panel", "toggleterm" },
       dim_inactive = false,
