@@ -62,13 +62,13 @@ return {
       vim.cmd("colorscheme oxocarbon")
 
       -- Optional: Set transparent background for various UI elements
-      vim.cmd("hi Normal guibg=NONE") -- Transparent background for Normal mode
-      vim.cmd("hi SignColumn guibg=NONE") -- Transparent background for SignColumn (gutter)
-      vim.cmd("hi VertSplit guibg=NONE") -- Transparent background for VertSplit
-      vim.cmd("hi StatusLine guibg=NONE") -- Transparent background for StatusLine
-      vim.cmd("hi TabLine guibg=NONE") -- Transparent background for TabLine
-      vim.cmd("hi TabLineFill guibg=NONE") -- Transparent background for TabLineFill
-      vim.cmd("hi FloatBorder guibg=NONE") -- Transparent background for floating windows
+      -- vim.cmd("hi Normal guibg=NONE") -- Transparent background for Normal mode
+      -- vim.cmd("hi SignColumn guibg=NONE") -- Transparent background for SignColumn (gutter)
+      -- vim.cmd("hi VertSplit guibg=NONE") -- Transparent background for VertSplit
+      -- vim.cmd("hi StatusLine guibg=NONE") -- Transparent background for StatusLine
+      -- vim.cmd("hi TabLine guibg=NONE") -- Transparent background for TabLine
+      -- vim.cmd("hi TabLineFill guibg=NONE") -- Transparent background for TabLineFill
+      -- vim.cmd("hi FloatBorder guibg=NONE") -- Transparent background for floating windows
     end,
   },
 
