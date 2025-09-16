@@ -14,30 +14,34 @@ return {
   --     vim.cmd.colorscheme(vim.g.lazyvim_theme)
   --   end,
   -- },
+  --------------------- AURA.nvim 💜
+
+  {
+    "baliestri/aura-theme",
+    lazy = false,
+    priority = 1000,
+    config = function(plugin)
+      -- Set runtime path for the plugin
+      vim.opt.rtp:append(plugin.dir .. "/packages/neovim")
+      -- Set the colorscheme based on your preference
+      vim.cmd([[colorscheme aura-dark]]) -- You can experiment with other variants like aura-dark-soft-text
+    end,
+  },
 
   --------------------- lavender.nvim 💜
-
   -- {
-  --   url = "https://codeberg.org/jthvai/lavender.nvim", -- Theme URL
-  --   branch = "stable", -- Ensure you are using the stable version
-  --   lazy = false, -- Load the theme immediately (no lazy loading)
+  --   "jthvai/lavender.nvim", -- Theme URL
+  --   lazy = false, -- Load the theme immediately
   --   priority = 1000, -- High priority to ensure it's loaded first
   --   opts = {
   --     transparent = true, -- Enable transparent background
-  --     italic_comments = true, -- Make comments italic (optional)
-  --     contrast = "high", -- Set contrast for more vibrant colors (optional)
-  --     dim_inactive = true, -- Dim inactive windows (optional)
-  --     style = "night", -- Set the style to "night" or "day" (optional)
+  --     italic_comments = true, -- Make comments italic
+  --     contrast = "high", -- Set contrast for vibrant colors
+  --     style = "night", -- Set the style to "night"
   --   },
   --   config = function()
   --     -- Apply the theme
   --     vim.cmd("colorscheme lavender")
-  --
-  --     -- Additional settings specific to Lavender theme
-  --     vim.g.lavender_italic_comments = true -- Enable italic comments
-  --     -- vim.g.lavender_contrast = "high" -- Optional: contrast setting
-  --     -- vim.g.lavender_dim_inactive = true -- Optional: dim inactive windows
-  --     vim.g.lavender_style = "night" -- Optional: set the style (night or day)
   --   end,
   -- },
 
@@ -67,30 +71,29 @@ return {
 
   -----------tookyonight color scheme 🌌
 
-  {
-    "folke/tokyonight.nvim",
-    lazy = false,
-    priority = 1000,
-    opts = {
-      style = "night", -- options: "storm", "moon", "night", "day"
-      transparent = false, -- << Enable transparency
-      terminal_colors = true,
-      styles = {
-        comments = { italic = true },
-        keywords = { italic = true },
-        functions = {},
-        variables = { italic = true },
-      },
-      sidebars = { "qf", "help", "terminal", "lazy", "lspinfo", "packer", "spectre_panel", "toggleterm" },
-      dim_inactive = false,
-    },
-    config = function(_, opts)
-      require("tokyonight").setup(opts)
-      vim.cmd([[colorscheme tokyonight]])
-    end,
-  },
+  -- {
+  --   "folke/tokyonight.nvim",
+  --   lazy = false,
+  --   priority = 1000,
+  --   opts = {
+  --     style = "night", -- options: "storm", "moon", "night", "day"
+  --     transparent = true, -- << Enable transparency
+  --     terminal_colors = true,
+  --     styles = {
+  --       comments = { italic = true },
+  --       keywords = { italic = true },
+  --       functions = {},
+  --       variables = { italic = true },
+  --     },
+  --     sidebars = { "qf", "help", "terminal", "lazy", "lspinfo", "packer", "spectre_panel", "toggleterm" },
+  --     dim_inactive = true,
+  --   },
+  --   config = function(_, opts)
+  --     require("tokyonight").setup(opts)
+  --     vim.cmd([[colorscheme tokyonight]])
+  --   end,
+  -- },
 
-  --
   ------------------AYU
   -- {
   --   "Shatur/neovim-ayu",
