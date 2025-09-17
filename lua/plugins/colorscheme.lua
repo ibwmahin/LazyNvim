@@ -15,27 +15,14 @@ return {
   --   end,
   -- },
 
-  --------------------- AURA.nvim 💜
-  -- {
-  --   "baliestri/aura-theme",
-  --   lazy = false,
-  --   priority = 1000,
-  --   config = function(plugin)
-  --     -- Set runtime path for the plugin
-  --     vim.opt.rtp:append(plugin.dir .. "/packages/neovim")
-  --     -- Set the colorscheme based on your preference
-  --     vim.cmd([[colorscheme aura-dark]]) -- You can experiment with other variants like aura-dark-soft-text
-  --   end,
-  -- },
-
   -----------tookyonight color scheme 🌌
   -- {
   --   "folke/tokyonight.nvim",
   --   lazy = false,
   --   priority = 1000,
   --   opts = {
-  --     style = "night", -- options: "storm", "moon", "night", "day"
-  --     transparent = true, -- << Enable transparency
+  --     style = "moon", -- options: "storm", "moon", "night", "day"
+  --     transparent = false, -- << Enable transparency
   --     terminal_colors = true,
   --     styles = {
   --       comments = { italic = true },
