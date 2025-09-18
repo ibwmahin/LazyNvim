@@ -1,0 +1,93 @@
+LazyVim Extras Default Keymaps
+
+This document lists default keymaps for the LazyVim extras installed in your setup, excluding editor.harpoon2, as requested. Keymaps are based on LazyVim defaults as of September 2025, using <leader> (<space>). Passive plugins (e.g., util.mini-hipatterns) have no keymaps.
+
+
+
+coding.mini-comment
+-------------------
+<leader>/ (normal/visual): Toggle comment on current line or selected block.
+gcc (normal): Toggle comment on current line (no <leader>).
+gc (visual): Toggle comment on selected lines.
+
+editor.fzf
+----------
+<leader>ff: Find files in project (fuzzy search).
+<leader>sg: Live grep (search text in project).
+<leader>fb: List open buffers.
+<leader>fh: Search help tags.
+<leader>fr: Search recent files.
+
+editor.inc-rename
+-----------------
+<leader>cr (normal): Start incremental rename with LSP preview.
+
+formatting.prettier
+------------------
+<leader>cf (normal): Format buffer with Prettier (or other formatter if vim.g.autoformat = false).
+Auto-formats on save if vim.g.autoformat = true (set in lua/config/options.lua).
+
+lang.json
+---------
+No specific keymaps; uses core LSP bindings:
+<leader>ca: Code actions (e.g., fix JSON issues).
+gd: Go to definition (if schema supports).
+K: Hover for schema info.
+
+lang.markdown
+
+No specific keymaps; uses core LSP/Treesitter bindings:
+<leader>ca: Code actions (e.g., fix markdown issues).
+<leader>co: Toggle outline (Treesitter-based folding).
+K: Hover for markdown-specific info.
+
+
+lang.tailwind
+-------------
+No specific keymaps; uses core LSP bindings:
+<leader>ca: Code actions (e.g., Tailwind suggestions).
+K: Hover for Tailwind class info.
+Completion triggered automatically in supported files (e.g., html, tsx).
+
+lang.toml
+-----------
+No specific keymaps; uses core LSP bindings:
+<leader>ca: Code actions (e.g., fix TOML syntax).
+K: Hover for schema info.
+
+lang.yaml
+-----------
+No specific keymaps; uses core LSP bindings:
+<leader>ca: Code actions (e.g., fix YAML syntax).
+K: Hover for schema info.
+
+linting.eslint
+--------------
+No specific keymaps; uses core LSP diagnostics:
+<leader>ca: Code actions (apply ESLint fixes).
+<leader>cd: Show diagnostics for current line.
+Auto-fixes on save if configured in ESLint.
+
+ui.indent-blankline
+-------------------
+No keymaps; passively shows indent guides in all buffers.
+
+ui.mini-animate
+---------------
+No keymaps; passively adds animations for scrolling, cursor, etc.
+
+util.gitui
+-------------
+<leader>gg: Open gitui for Git operations (commit, diff, blame).
+<leader>gb: Show Git blame for current line (core LazyVim, enhanced by util.gitui).
+
+util.mini-hipatterns
+--------------------
+No keymaps; passively highlights hex colors and Tailwind classes with inline swatches.
+
+Notes
+------
+Keymaps assume default LazyVim bindings. Check lua/config/keymaps.lua for customizations.
+LSP keymaps (<leader>ca, gd, K) require running LSP servers (e.g., typescript-language-server, eslint-lsp).
+Run :Lazy keymaps to list all active keymaps.
+Run :checkhealth to verify plugin setup.

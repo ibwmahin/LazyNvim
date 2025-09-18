@@ -1,5 +1,6 @@
--- FILE: lua/keymaps/full.lua
--- NVChad / LazyVim-style keymaps full drop-in
+-- Keymaps are automatically loaded on the VeryLazy event
+-- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
+-- Add any additional keymaps here
 
 local map = vim.keymap.set
 local default_opts = { noremap = true, silent = true }
