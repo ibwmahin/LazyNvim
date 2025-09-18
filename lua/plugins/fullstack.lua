@@ -37,7 +37,7 @@ return {
   -- MASON (ensure Python tooling + JS tooling + formatters)
   -----------------------------------------------------------------------------
   {
-    "williamboman/mason.nvim",
+    "wmason-org/mason.nvim",
     opts = {
       ensure_installed = {
         "lua-language-server",
@@ -314,8 +314,7 @@ return {
             return root ~= nil
           end,
         },
-        stylelint = {
-          condition = function(ctx)
+hh
             local root = util.root_pattern(".stylelintrc", "stylelint.config.js")(ctx.filename)
             return root ~= nil
           end,
@@ -327,7 +326,6 @@ return {
   -----------------------------------------------------------------------------
   -- DEBUGGING: DAP + Python integration
   -----------------------------------------------------------------------------
-  { "jay-babu/mason-nvim-dap.nvim", opts = { ensure_installed = { "js", "python" }, handlers = {} } },
   { "mfussenegger/nvim-dap", dependencies = { "rcarriga/nvim-dap-ui", "theHamsta/nvim-dap-virtual-text" } },
   { "rcarriga/nvim-dap-ui", opts = {} },
   { "theHamsta/nvim-dap-virtual-text", opts = {} },

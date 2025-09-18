@@ -16,48 +16,48 @@ return {
   -- },
 
   -----------tookyonight color scheme 🌌
-  -- {
-  --   "folke/tokyonight.nvim",
-  --   lazy = false,
-  --   priority = 1000,
-  --   opts = {
-  --     style = "moon", -- options: "storm", "moon", "night", "day"
-  --     transparent = false, -- << Enable transparency
-  --     terminal_colors = true,
-  --     styles = {
-  --       comments = { italic = true },
-  --       keywords = { italic = true },
-  --       functions = {},
-  --       variables = { italic = true },
-  --     },
-  --     sidebars = { "qf", "help", "terminal", "lazy", "lspinfo", "packer", "spectre_panel", "toggleterm" },
-  --     dim_inactive = true,
-  --   },
-  --   config = function(_, opts)
-  --     require("tokyonight").setup(opts)
-  --     vim.cmd([[colorscheme tokyonight]])
-  --   end,
-  -- },
-
-  ------------------- OXOCAEBON;
   {
-    "nyoom-engineering/oxocarbon.nvim", -- Plugin URL
-    lazy = false, -- Load immediately (no lazy loading)
-    priority = 1000, -- Ensure high priority to load the theme first
-    config = function()
-      -- Apply the Oxocarbon theme
-      vim.cmd("colorscheme oxocarbon")
-
-      -- Optional: Set transparent background for various UI elements
-      -- vim.cmd("hi Normal guibg=NONE") -- Transparent background for Normal mode
-      -- vim.cmd("hi SignColumn guibg=NONE") -- Transparent background for SignColumn (gutter)
-      -- vim.cmd("hi VertSplit guibg=NONE") -- Transparent background for VertSplit
-      -- vim.cmd("hi StatusLine guibg=NONE") -- Transparent background for StatusLine
-      -- vim.cmd("hi TabLine guibg=NONE") -- Transparent background for TabLine
-      -- vim.cmd("hi TabLineFill guibg=NONE") -- Transparent background for TabLineFill
-      -- vim.cmd("hi FloatBorder guibg=NONE") -- Transparent background for floating windows
+    "folke/tokyonight.nvim",
+    lazy = false,
+    priority = 1000,
+    opts = {
+      style = "moon", -- options: "storm", "moon", "night", "day"
+      transparent = true, -- << Enable transparency
+      terminal_colors = true,
+      styles = {
+        comments = { italic = true },
+        keywords = { italic = true },
+        functions = {},
+        variables = { italic = true },
+      },
+      sidebars = { "qf", "help", "terminal", "lazy", "lspinfo", "packer", "spectre_panel", "toggleterm" },
+      dim_inactive = true,
+    },
+    config = function(_, opts)
+      require("tokyonight").setup(opts)
+      vim.cmd([[colorscheme tokyonight]])
     end,
   },
+
+  ------------------- OXOCAEBON;
+  -- {
+  --   "nyoom-engineering/oxocarbon.nvim", -- Plugin URL
+  --   lazy = false, -- Load immediately (no lazy loading)
+  --   priority = 1000, -- Ensure high priority to load the theme first
+  --   config = function()
+  --     -- Apply the Oxocarbon theme
+  --     vim.cmd("colorscheme oxocarbon")
+  --
+  --     -- Optional: Set transparent background for various UI elements
+  --     -- vim.cmd("hi Normal guibg=NONE") -- Transparent background for Normal mode
+  --     -- vim.cmd("hi SignColumn guibg=NONE") -- Transparent background for SignColumn (gutter)
+  --     -- vim.cmd("hi VertSplit guibg=NONE") -- Transparent background for VertSplit
+  --     -- vim.cmd("hi StatusLine guibg=NONE") -- Transparent background for StatusLine
+  --     -- vim.cmd("hi TabLine guibg=NONE") -- Transparent background for TabLine
+  --     -- vim.cmd("hi TabLineFill guibg=NONE") -- Transparent background for TabLineFill
+  --     -- vim.cmd("hi FloatBorder guibg=NONE") -- Transparent background for floating windows
+  --   end,
+  -- },
 
   -------------------------GITHUB THEME
   -- {
