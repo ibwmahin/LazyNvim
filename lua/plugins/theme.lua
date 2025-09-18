@@ -21,8 +21,8 @@ return {
     lazy = false,
     priority = 1000,
     opts = {
-      style = "moon", -- options: "storm", "moon", "night", "day"
-      transparent = true, -- << Enable transparency
+      style = "storm", -- options: "storm", "moon", "night", "day"
+      transparent = false, -- << Enable transparency
       terminal_colors = true,
       styles = {
         comments = { italic = true },
