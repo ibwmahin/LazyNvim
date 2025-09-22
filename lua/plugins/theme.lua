@@ -39,60 +39,25 @@ return {
   --   end,
   -- },
 
-  ------------------- OXOCAEBON;
-  -- {
-  --   "nyoom-engineering/oxocarbon.nvim", -- Plugin URL
-  --   lazy = false, -- Load immediately (no lazy loading)
-  --   priority = 1000, -- Ensure high priority to load the theme first
-  --   config = function()
-  --     -- Apply the Oxocarbon theme
-  --     vim.cmd("colorscheme oxocarbon")
-  --
-  --     -- Optional: Set transparent background for various UI elements
-  --     vim.cmd("hi Normal guibg=NONE") -- Transparent background for Normal mode
-  --     -- vim.cmd("hi SignColumn guibg=NONE") -- Transparent background for SignColumn (gutter)
-  --     -- vim.cmd("hi VertSplit guibg=NONE") -- Transparent background for VertSplit
-  --     -- vim.cmd("hi StatusLine guibg=NONE") -- Transparent background for StatusLine
-  --     -- vim.cmd("hi TabLine guibg=NONE") -- Transparent background for TabLine
-  --     -- vim.cmd("hi TabLineFill guibg=NONE") -- Transparent background for TabLineFill
-  --     -- vim.cmd("hi FloatBorder guibg=NONE") -- Transparent background for floating windows
-  --   end,
-  -- },
-
   -------------------------GITHUB THEME
-  -- {
-  --   "projekt0n/github-nvim-theme",
-  --   name = "github-theme",
-  --   lazy = false, -- make sure we load this during startup if it is your main colorscheme
-  --   priority = 1000, -- make sure to load this before all the other start plugins
-  --   config = function()
-  --     require("github-theme").setup({
-  --       --  ...
-  --     })
-  --
-  --     -- vim.cmd("colorscheme github_dark")
-  --     vim.cmd("colorscheme github_dark_default")
-  --     -- vim.cmd("colorscheme github_dark_dimmed")
-  --     -- vim.cmd("colorscheme github_dark_high_contrast")
-  --     -- vim.cmd("colorscheme github_dark_colorblind")
-  --     -- vim.cmd("colorscheme github_dark_tritanopia")
-  --   end,
-  -- },
-
   {
-    -- Add the Ayu plugin
-    {
-      "Shatur/neovim-ayu",
-      lazy = false, -- Ensures it loads immediately
-      priority = 1000, -- Load early to apply the colorscheme
-    },
+    "projekt0n/github-nvim-theme",
+    name = "github-theme",
+    lazy = false, -- make sure we load this during startup if it is your main colorscheme
+    priority = 1000, -- make sure to load this before all the other start plugins
+    config = function()
+      require("github-theme").setup({
+        options = {
+          transparent = false,
+        },
+      })
 
-    -- Configure LazyVim to use Ayu as the default colorscheme
-    {
-      "LazyVim/LazyVim",
-      opts = {
-        colorscheme = "ayu",
-      },
-    },
+      -- vim.cmd("colorscheme github_dark")
+      vim.cmd("colorscheme github_dark_default")
+      -- vim.cmd("colorscheme github_dark_dimmed")
+      -- vim.cmd("colorscheme github_dark_high_contrast")
+      -- vim.cmd("colorscheme github_dark_colorblind")
+      -- vim.cmd("colorscheme github_dark_tritanopia")
+    end,
   },
 }
