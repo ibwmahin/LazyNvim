@@ -16,28 +16,28 @@ return {
   -- },
 
   -----------tookyonight color scheme 🌌
-  {
-    "folke/tokyonight.nvim",
-    lazy = false,
-    priority = 1000,
-    opts = {
-      style = "moon", -- options: "storm", "moon", "night", "day"
-      transparent = true, -- << Enable transparency
-      terminal_colors = true,
-      styles = {
-        comments = { italic = true },
-        keywords = { italic = true },
-        functions = {},
-        variables = { italic = true },
-      },
-      sidebars = { "qf", "help", "terminal", "lazy", "lspinfo", "packer", "spectre_panel", "toggleterm" },
-      dim_inactive = true,
-    },
-    config = function(_, opts)
-      require("tokyonight").setup(opts)
-      vim.cmd([[colorscheme tokyonight]])
-    end,
-  },
+  -- {
+  --   "folke/tokyonight.nvim",
+  --   lazy = false,
+  --   priority = 1000,
+  --   opts = {
+  --     style = "moon", -- options: "storm", "moon", "night", "day"
+  --     transparent = false, -- << Enable transparency
+  --     terminal_colors = true,
+  --     styles = {
+  --       comments = { italic = true },
+  --       keywords = { italic = true },
+  --       functions = {},
+  --       variables = { italic = true },
+  --     },
+  --     sidebars = { "qf", "help", "terminal", "lazy", "lspinfo", "packer", "spectre_panel", "toggleterm" },
+  --     dim_inactive = true,
+  --   },
+  --   config = function(_, opts)
+  --     require("tokyonight").setup(opts)
+  --     vim.cmd([[colorscheme tokyonight]])
+  --   end,
+  -- },
 
   ------------------- OXOCAEBON;
   -- {
@@ -78,4 +78,21 @@ return {
   --     -- vim.cmd("colorscheme github_dark_tritanopia")
   --   end,
   -- },
+
+  {
+    -- Add the Ayu plugin
+    {
+      "Shatur/neovim-ayu",
+      lazy = false, -- Ensures it loads immediately
+      priority = 1000, -- Load early to apply the colorscheme
+    },
+
+    -- Configure LazyVim to use Ayu as the default colorscheme
+    {
+      "LazyVim/LazyVim",
+      opts = {
+        colorscheme = "ayu",
+      },
+    },
+  },
 }
