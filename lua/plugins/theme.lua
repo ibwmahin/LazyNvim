@@ -1,5 +1,4 @@
 return {
-
   -- ╭──────────────────────────────────────────────────────────╮
   -- │ 🌌 Solarized Osaka Theme — clean & elegant              │
   -- ╰──────────────────────────────────────────────────────────╯
@@ -49,38 +48,6 @@ return {
   --
 
   -- ╭──────────────────────────────────────────────────────────╮
-  -- │ 🐉 Kanagawa — serene tones, inspired by Japanese art       │
-  -- ╰──────────────────────────────────────────────────────────╯
-  -- {
-  --   "rebelot/kanagawa.nvim",
-  --   lazy = false,
-  --   priority = 1000,
-  --
-  --   opts = {
-  --     -- Kanagawa has a few styles; pick one dark style
-  --     style = "wave", -- *choices: “default”, “wave”, “lotus”, etc.*
-  --     transparent = true,
-  --     dim_inactive = true,
-  --     colors = {
-  --       theme = {
-  --         all = {
-  --           ui = {
-  --             bg_gutter = "none",
-  --           },
-  --         },
-  --       },
-  --     },
-  --     -- optionally: overrides and integrations here
-  --   },
-  --
-  --   config = function(_, opts)
-  --     require("kanagawa").setup(opts)
-  --     vim.g.lazyvim_theme = "kanagawa"
-  --     vim.cmd.colorscheme("kanagawa")
-  --   end,
-  -- },
-
-  -- ╭──────────────────────────────────────────────────────────╮
   -- │ ⚙️ GitHub Theme — dark variant                          │
   -- ╰──────────────────────────────────────────────────────────╯
   -- {
@@ -97,8 +64,11 @@ return {
   --
   --   config = function(_, opts)
   --     require("github-theme").setup(opts)
-  --     vim.g.lazyvim_theme = "github_dark_default"
-  --     vim.cmd("colorscheme github_dark_default")
+  --     -- vim.cmd("colorscheme github_dark")
+  --     -- vim.cmd("colorscheme github_dark_dimmed")
+  --     -- vim.cmd("colorscheme github_dark_default")
+  --     -- vim.cmd("colorscheme github_dark_hight_contrast")
+  --     vim.cmd("colorscheme github_dark_tritanopia")
   --   end,
   -- },
 }
