@@ -64,7 +64,7 @@ end
 safe_map("n", "<leader>jj", split_vertical)
 safe_map("n", "<leader>kk", split_horizontal)
 safe_map("n", "<leader>se", equalize_windows)
-safe_map("n", "<leader>sx", close_split)
+safe_map("n", "<leader>jc", close_split)
 safe_map("n", "<leader>wr", rotate_windows)
 
 -- Move between splits
