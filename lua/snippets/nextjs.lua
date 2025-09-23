@@ -46,7 +46,12 @@ const {} = ({}) => {{
 
 export default {};
         ]],
-        { i(2, "ComponentName"), i(1, "props"), i(0), f(filename_to_component, { 1 }) }
+        {
+          i(2, "ComponentName"),
+          i(1, "props"),
+          i(0),
+          f(filename_to_component, { 1 }),
+        }
       )
     ),
 
@@ -111,7 +116,14 @@ const {}: React.FC<{}> = ({}) => {{
 
 export default {};
         ]],
-        { i(1, "Props"), i(2, "ComponentName"), i(1), i(3, "props"), i(0), f(filename_to_component, { 2 }) }
+        {
+          i(1, "Props"),
+          i(2, "ComponentName"),
+          i(1),
+          i(3, "props"),
+          i(0),
+          f(filename_to_component, { 2 }),
+        }
       )
     ),
 
@@ -179,7 +191,12 @@ function {}({}) {{
 
 export default {};
         ]],
-        { i(2, "ComponentName"), i(1, "props"), i(0), f(filename_to_component, { 2 }) }
+        {
+          i(2, "ComponentName"),
+          i(1, "props"),
+          i(0),
+          f(filename_to_component, { 2 }),
+        }
       )
     ),
   },

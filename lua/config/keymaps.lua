@@ -44,19 +44,25 @@ end
 
 local function resize_horiz(delta)
   local w = vim.api.nvim_get_current_win()
-  vim.api.nvim_win_set_width(w, math.max(10, vim.api.nvim_win_get_width(w) + delta))
+  vim.api.nvim_win_set_width(
+    w,
+    math.max(10, vim.api.nvim_win_get_width(w) + delta)
+  )
 end
 
 local function resize_vert(delta)
   local w = vim.api.nvim_get_current_win()
-  vim.api.nvim_win_set_height(w, math.max(3, vim.api.nvim_win_get_height(w) + delta))
+  vim.api.nvim_win_set_height(
+    w,
+    math.max(3, vim.api.nvim_win_get_height(w) + delta)
+  )
 end
 
 -- ----------------------
 -- Window / split mappings
 -- ----------------------
-safe_map("n", "<leader>sv", split_vertical)
-safe_map("n", "<leader>sh", split_horizontal)
+safe_map("n", "<leader>jj", split_vertical)
+safe_map("n", "<leader>kk", split_horizontal)
 safe_map("n", "<leader>se", equalize_windows)
 safe_map("n", "<leader>sx", close_split)
 safe_map("n", "<leader>wr", rotate_windows)
