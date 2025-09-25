@@ -104,7 +104,11 @@ return {
     event = "BufReadPre",
     opts = {
       filetypes = { "*", "!lazy" },
-      user_default_options = { names = false, tailwind = true, mode = "background" },
+      user_default_options = {
+        names = false,
+        tailwind = true,
+        mode = "background",
+      },
     },
   },
 }
