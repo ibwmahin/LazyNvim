@@ -1,50 +1,67 @@
 return {
+
+  {
+    "oxfist/night-owl.nvim",
+    lazy = false, -- make sure we load this during startup if it is your main colorscheme
+    priority = 1000, -- make sure to load this before all the other start plugins
+    config = function()
+      -- load the colorscheme here
+      require("night-owl").setup({
+        bold = true,
+        italics = true,
+        underline = true,
+        undercurl = true,
+        transparent_background = false,
+      })
+      vim.cmd.colorscheme("night-owl")
+    end,
+  },
   -- ╭──────────────────────────────────────────────────────────╮
   -- │ 🌌 Solarized Osaka Theme — clean & elegant              │
   -- ╰──────────────────────────────────────────────────────────╯
-  {
-    "craftzdog/solarized-osaka.nvim",
-    lazy = false, -- *Load immediately*
-    priority = 1000, -- *High priority so it's loaded first*
-
-    opts = {
-      transparent = true, -- *Enable transparency*
-    },
-
-    config = function(_, opts)
-      require("solarized-osaka").setup(opts)
-      vim.g.lazyvim_theme = "solarized-osaka"
-      vim.cmd.colorscheme(vim.g.lazyvim_theme)
-    end,
-  },
+  -- {
+  --   "craftzdog/solarized-osaka.nvim",
+  --   lazy = false, -- *Load immediately*
+  --   priority = 1000, -- *High priority so it's loaded first*
+  --
+  --   opts = {
+  --     transparent = false, -- *Enable transparency*
+  --   },
+  --
+  --   config = function(_, opts)
+  --     require("solarized-osaka").setup(opts)
+  --     vim.g.lazyvim_theme = "solarized-osaka"
+  --     vim.cmd.colorscheme(vim.g.lazyvim_theme)
+  --   end,
+  -- },
 
   -- ╭──────────────────────────────────────────────────────────╮
   -- │ 🌙 Tokyonight — rich plugin support & multiple styles     │
   -- ╰──────────────────────────────────────────────────────────╯
   -- {
-  --   "folke/tokyonight.nvim",
-  --   lazy = false,
-  --   priority = 1000,
+  --       "folke/tokyonight.nvim",
+  --       lazy = false,
+  --       priority = 1000,
   --
-  --   opts = {
-  --     style = "night", -- *Choices: "storm", "moon", "night", "day" (we use dark ones)*
-  --     transparent = true,
-  --     terminal_colors = true,
-  --     styles = {
-  --       comments = { italic = true },
-  --       keywords = { italic = true },
-  --       functions = {},
-  --       variables = { italic = true },
-  --     },
-  --     dim_inactive = true,
-  --   },
+  --       opts = {
+  --         style = "night", -- *Choices: "storm", "moon", "night", "day" (we use dark ones)*
+  --         transparent = false,
+  --         terminal_colors = true,
+  --         styles = {
+  --           comments = { italic = true },
+  --           keywords = { italic = true },
+  --           functions = { bold = true, italic = true },
+  --           variables = { italic = true },
+  --         },
+  --         dim_inactive = true,
+  --       },
   --
-  --   config = function(_, opts)
-  --     require("tokyonight").setup(opts)
-  --     vim.g.lazyvim_theme = "tokyonight"
-  --     vim.cmd.colorscheme("tokyonight")
-  --   end,
-  -- },
+  --       config = function(_, opts)
+  --         require("tokyonight").setup(opts)
+  --         vim.g.lazyvim_theme = "tokyonight"
+  --         vim.cmd.colorscheme("tokyonight")
+  --       end,
+  --     }),
   --
 
   -- ╭──────────────────────────────────────────────────────────╮
@@ -58,7 +75,7 @@ return {
   --
   --   opts = {
   --     options = {
-  --       transparent = true,
+  --       -- transparent = true,
   --     },
   --   },
   --
@@ -67,8 +84,8 @@ return {
   --     -- vim.cmd("colorscheme github_dark")
   --     -- vim.cmd("colorscheme github_dark_dimmed")
   --     -- vim.cmd("colorscheme github_dark_default")
-  --     -- vim.cmd("colorscheme github_dark_hight_contrast")
-  --     vim.cmd("colorscheme github_dark_tritanopia")
+  --     -- vim.cmd("colorscheme github_dark_high_contrast")
+  --     -- vim.cmd("colorscheme github_dark_tritanopia")
   --   end,
   -- },
 }
